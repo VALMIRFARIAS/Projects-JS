@@ -8,14 +8,21 @@ const closeModal = () => document.getElementById('modal')
 
 
 const tempClient = {
-    nome: "Marco",
-    email: "marco@gmail.com",
+    nome: "Rony",
+    email: "rony10@gmail.com",
     celular: "85988888888",
     cidade: "Fortaleza"
 }
 
+const getLocalStorage = () => JSON.parse(localStorage.getItem('dbClient')) ?? []
+const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
+
+
+//CRUD - CREATE
 const createClient = (client) => {
-    localStorage.setItem()
+    const dbClient = getLocalStorage()
+    dbClient.push(client)
+    setLocalStorage(dbClient)    
 }
     
 //Events
